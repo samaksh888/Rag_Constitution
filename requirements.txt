@@ -1,0 +1,7 @@
+langchain_groq
+langchain_huggingface
+langchain
+faiss-cpu
+pypdf
+langchain-community
+streamlit
