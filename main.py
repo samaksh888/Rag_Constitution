@@ -14,13 +14,13 @@ def main():
     EMBEDDING = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
     llm = ChatGroq(
-        groq_api_key=os.getenv("GROQ_API_KEY"),
+        groq_api_key=st.secrets["GROQ_API_KEY"],
         model_name="llama3-70b-8192"
     )
 
     # Load the FAISS vector embeddings 
     vectors = FAISS.load_local(
-        "faiss_index", 
+        "faiss-index", 
         embeddings=EMBEDDING, 
         allow_dangerous_deserialization=True
     )
