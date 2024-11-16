@@ -28,9 +28,11 @@ def main():
     # Set up prompt template and QA chain
     prompt = ChatPromptTemplate.from_template(
         """
-        Use the following pieces of context to answer the question at the end. 
-        If you don't know the answer, say that you don't know it.
-        Keep the answers relevant to the constitution of India pdf only.
+        You have expertise in the Indian Constitution and the laws, You have to answer some related questions!
+        You can use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, first try to make a sensible response from the data provided through the vector database of India's constitution,
+        or else say that you don't know it.
+        Keep the responses relevant to the constitution of India pdf only.
         {context}
         Question: {question}
         """
