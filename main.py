@@ -29,10 +29,11 @@ def main():
     prompt = ChatPromptTemplate.from_template(
         """
         You have expertise in the Indian Constitution and the laws, You have to answer some related questions!
-        You can use the following pieces of context to answer the question at the end. 
-        If you don't know the answer, first try to make a sensible response from the data provided through the vector database of India's constitution,
-        or else say that you don't know it.
-        Keep the responses relevant to the constitution of India pdf only.
+     
+        Try to respond with the latest information available. First, try to make a 
+        sensible response from the data provided through the vector database of India's constitution.
+        If you don't know the answer, respond with "Chup reh bhosdike!!".
+        Keep the responses relevant to the Constitution of India pdf only, and !
         {context}
         Question: {question}
         """
