@@ -67,9 +67,6 @@ def main():
 
         # When submit button is pressed, process the query
         if submit_button and query:
-            # Capture the current time of the query submission
-            question_time = datetime.now().strftime("%H:%M:%S")
-            
             with st.spinner("Processing your query..."):
                 # Call the QA chain with the query and memory
                 result = qa_chain({"query": query})
@@ -84,7 +81,8 @@ def main():
         # Display chat history from the memory
         for message in memory.chat_memory.messages:
             if message.type == "human":
-                st.write(f"**You:** {message.content}")
+                question_time = datetime.now().strftime("%H:%M:%S")
+                st.write(f"**You {question_time}:** {message.content}")
             elif message.type == "ai":
                 st.write(f"**Bot:** {message.content}")
 
