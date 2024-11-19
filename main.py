@@ -131,9 +131,8 @@ def main():
                 st.write(f"**PROMPT ({timestamp}):** {message['content']}")
             elif message["type"] == "ai":
                 st.write(f"**RESPONSE ({timestamp}):** {message['content']}")
-                st.write("  \n")
-                st.write("  \n")
-                st.write("  \n")
+                st.markdown("  \n")
+                st.markdown("  \n")
 
 if __name__ == "__main__":
     load_dotenv()
