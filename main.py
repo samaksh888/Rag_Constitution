@@ -75,8 +75,7 @@ def main():
                 st.write(result['result'])
 
     elif page == "Chat History":
-        st.title("📜 Chat History")
-        st.write("Here is the chat history with the Indian Constitution chatbot:")
+        st.title("📜 Chat History") 
 
         # Display chat history from the memory
         for message in memory.chat_memory.messages:
@@ -84,7 +83,7 @@ def main():
                 question_time = datetime.now().strftime("%H:%M:%S")
                 st.write(f"**You {question_time}:** {message.content}")
             elif message.type == "ai":
-                st.write(f"**Bot:** {message.content}")
+                st.write(f"**Bot:** {message.content} \n")
 
 
 if __name__ == "__main__":
