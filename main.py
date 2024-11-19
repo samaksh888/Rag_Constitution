@@ -127,9 +127,9 @@ def main():
 
         for message in sorted_messages:
             timestamp = message["timestamp"].strftime("%H:%M:%S")
-            if message["type"] == "ai":
+            if message["type"] == "human":
                 st.write(f"**PROMPT ({timestamp}):** {message['content']}")
-            elif message["type"] == "human":
+            elif message["type"] == "ai":
                 st.write(f"**RESPONSE ({timestamp}):** {message['content']}")
                 st.markdown("  \n")
                 st.markdown("  \n")
