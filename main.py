@@ -122,17 +122,28 @@ def main():
     elif page == "Chat History":
         st.title("📜 Chat History")
 
-        # Display chat history from the memory in descending order
-        sorted_messages = sorted(memory["messages"], key=lambda x: x["timestamp"], reverse=True)
-
-        for message in sorted_messages:
-            timestamp = message["timestamp"].strftime("%H:%M:%S")
+        # Group messages into prompt-response pairs for better readability
+        grouped_messages = []
+        temp_pair = {}
+    
+        for message in memory["messages"]:
             if message["type"] == "human":
-                st.write(f"**PROMPT ({timestamp}):** {message['content']}")
-            elif message["type"] == "ai":
-                st.write(f"**RESPONSE ({timestamp}):** {message['content']}")
-                st.markdown("  \n")
-                st.markdown("  \n")
+                # Start a new pair
+                temp_pair = {"prompt": message}
+            elif message["type"] == "ai" and temp_pair:
+                # Complete the pair
+                temp_pair["response"] = message
+                grouped_messages.append(temp_pair)
+                temp_pair = {}
+    
+        # Display chat history
+        for pair in grouped_messages[::-1]:  # Reverse to display latest first
+            prompt_time = pair["prompt"]["timestamp"].strftime("%H:%M:%S")
+            response_time = pair["response"]["timestamp"].strftime("%H:%M:%S")
+            st.write(f"**PROMPT ({prompt_time}):** {pair['prompt']['content']}")
+            st.write(f"**RESPONSE ({response_time}):** {pair['response']['content']}")
+            st.markdown("---")        
+            st.markdown("  \n")
 
 if __name__ == "__main__":
     load_dotenv()
