@@ -81,9 +81,9 @@ def main():
         for message in memory.chat_memory.messages:
             if message.type == "human":
                 question_time = datetime.now().strftime("%H:%M:%S")
-                st.write(f"**You {question_time}:** {message.content}")
+                st.write(f"**You {(question_time)}:** {message.content}")
             elif message.type == "ai":
-                st.write(f"**Bot:** {message.content} \n")
+                st.write(f"**Bot:** {message.content} \n\n")
 
 
 if __name__ == "__main__":
