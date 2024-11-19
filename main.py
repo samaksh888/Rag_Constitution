@@ -32,10 +32,11 @@ def main():
     prompt = ChatPromptTemplate.from_template(
         """
         You have expertise in the Indian Constitution and the laws, You have to answer some related questions!
-        Keep the responses Concise and short(of max 2 to 5 lines generally) unless asked to elongate the result.
+        Keep the responses Concise (of a maximum of 2 to 5 lines generally) unless asked to elongate the result.
         Try to respond with the latest information available. First, try to make a 
         sensible response from the data provided through the vector database of India's constitution.
-        If you don't know the answer, respond accordingly. Remember that the latest amendment done in the constitution was 106th in 2023.
+        If you don't know the answer, respond accordingly. Remember that the latest amendment done in the constitution was 106th in 2023, and 
+        India has 448 articles, 25 parts, and 12 schedules yet in the Constitution.
         Keep the responses relevant to the Constitution of India pdf only by searching for the latest information in the database!
         {context}
         Question: {question}
