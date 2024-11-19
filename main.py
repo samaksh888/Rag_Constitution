@@ -83,7 +83,8 @@ def main():
                 question_time = datetime.now().strftime("%H:%M:%S")
                 st.write(f"**You {(question_time)}:** {message.content}")
             elif message.type == "ai":
-                st.write(f"**Bot:** {message.content} \n\n")
+                st.write(f"**Bot:** {message.content}")
+                st.write()
 
 
 if __name__ == "__main__":
