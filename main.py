@@ -32,8 +32,8 @@ def main():
      
         Try to respond with the latest information available. First, try to make a 
         sensible response from the data provided through the vector database of India's constitution.
-        If you don't know the answer, respond accordingly.
-        Keep the responses relevant to the Constitution of India pdf only by first searching the latest information through the database!
+        If you don't know the answer, respond accordingly. Remember that the latest amendment done in the constitution was 106th in 2023.
+        Keep the responses relevant to the Constitution of India pdf only by searching for the latest information in the database!
         {context}
         Question: {question}
         """
