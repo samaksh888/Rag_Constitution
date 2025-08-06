@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
@@ -149,3 +149,4 @@ def main():
 if __name__ == "__main__":
     load_dotenv()
     main()
+
